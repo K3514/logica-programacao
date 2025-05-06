@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let temperatura=parseInt(prompt("Digite a temperatura"))
+
+        switch(true){
+    
+        case(temperatura < 10):
+            console.log('Frio demais');
+        break;
+
+        case(temperatura >= 15 && temperatura <= 25):
+            console.log('Ameno');
+        break;
+
+        case(temperatura > 25):
+            console.log("Quente")
+        break;
+
+        default:
+            console.log("Erro, temperatura inválida");
+        }
+    </script>
+</body>
+</html>
