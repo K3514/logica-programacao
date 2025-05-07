@@ -7,13 +7,16 @@
 </head>
 <body>
     <script>
-        let quilometro=parseInt(prompt("Digite a distancia"))
-        let litro=parseInt(prompt("Digite a qunatidade de litros"))
+        let distancia = parseFloat(prompt("Digite a distancia pecorrida"))
+        let consumo=parseFloat(prompt("Digite o consumo total"))
 
-        function consumomedio(quilometro, litro){
-            return quilometro / litro
+        function calcularConsumo(distancia, cosumo){
+            return distancia / consumo
         }
-        console.log("O total de litros consumidos por quilometros é:" + consumomedio())
+        alert("A distancia informada foi de:" 
+        + distancia + ".O consumo informado foi de:" 
+        + consumo + ". Sendo assim, a média foi de: " 
+        + calcularConsumo(distancia, consumo))
     </script>
 </body>
 </html>

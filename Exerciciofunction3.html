@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 3 - function</title>
+</head>
+<body>
+    <script>
+
+        let horario = parseInt(prompt("Que horas são?"))
+
+        function calcularHorario(horario){
+            if(horario >= 8 && horario <= 18){ 
+                return "Bem-vindo, estamos prontos para te atender!"
+            }else{
+                return "Opa, estamos fechados, volte em outro horário"
+            }
+            }
+            alert(calcularHorario(horario))
+    </script>
+</body>
+</html>
