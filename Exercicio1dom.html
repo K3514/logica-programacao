@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - Exercicio 1</title>
+</head>
+<body>
+    <p>Como atualizar o preço de um produto quando selecionar uma nova opção de cor</p>
+
+    <h1>Seleicone um produto</h1>
+    <select id="produto" onchange="atualizarPreco()">
+        <option value="50">Verde - R$50,00 </option>
+        <option value="60">Cinza - R$60,00 </option>
+        <option value="70">Lilas - R$70,00 </option>
+        <option value="80">Preto - R$80,00 </option>
+    </select>
+
+    <p> Você selecionou -> R$ <span id="resultadoPreco">50</span>,00</p>
+
+    <script>
+        function atualizarPreco(){
+            let valor = document.getElementById('produto').value
+            let preco = document.getElementById("resultadoPreco")
+            preco.textContent = valor;
+        }
+    </script>
+
+</body>
+</html>
