@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exemplo uso do inner</title>
+</head>
+<body>
+    <div id="listaLinks">
+
+    </div>
+    <button onclick="adiconarLinks()"> Dar acesso aos links</button>
+    <script>
+        function adiconarLinks(){
+            let lista = document.getElementById('listaLinks')
+            lista.innerHTML = '<ul> <li> <a href="https://www.google.com.br/?hl=pt-BR"> google </a> </li> <li> <a href="https://www.google.com.br/?hl=pt-BR"> google </a> </li><li> <a href="https://www.google.com.br/?hl=pt-BR"> google </a> </li></ul>'
+        }
+    </script>
+</body>
+</html>

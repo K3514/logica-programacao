@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1> Deixe um comentario</h1>
+        <input type="text" id="texto" placeholder="digite aqui">
+        <button onclick="adiconarTexto()">Enviar</button>
+
+        <div id="texto"> </div>
+
+    <script>
+
+       function adiconarTexto(){
+            let texto = document.getElementById("text")
+            let descricao
+            texto.innerHTML = '<p>${texto}</p>';
+
+       }
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 4 -DOM</title>
+</head>
+<body>
+    <p>Como mostrar a quantidade de produto dentro de um carrinho</p>
+    <p id="quantidadeCarrinho"> Quantidade de itens = 0</p>
+    
+    <button onclick="adicionarItem()">Adicionar</button>
+    <button onclick="removerItem()"> Remover</button>
+    <button onclick="resetar()">Resetar</button>
+
+    <script>
+
+        let quantidade = 0;
+
+        function adicionarItem(){
+            quantidade += 1
+            let carrinho = document.getElementById('quantidadeCarrinho');
+        carrinho.textContent = "Quantidade de itens = " + quantidade
+
+        }
+        function removerItem(){
+            if(quantidade > 0){
+               quantidade -= 1
+            }
+            let carrinho = document.getElementById('quantidadeCarrinho');
+            carrinho.textContent = "Quantidade de itens =" + quantidade
+        }
+
+        function resetar(){
+             quantidade = 0
+            let carrinho = document.getElementById('quantidadeCarrinho');
+            carrinho.textContent = "Quantidade de itens =" + quantidade
+        }
+    
+    
+    
+
+    </script>
+</body>
+</html>

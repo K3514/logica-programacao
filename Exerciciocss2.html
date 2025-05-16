@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio css 2</title>
+    
+    <style>
+        body{
+            font-family: 'Times New Roman', Times, serif;
+            background-color: aliceblue;
+            color: black;
+            transition: background-color 0.2s, color 0.2s
+        }
+        .modo-noturno{
+            background-color: black;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <h1> Alternar entre modo escuro e claro</h1>
+    <button onclick="alternarModo()"> Modo noturno</button>
+
+    <script>
+        function alternarModo(){
+            document.body.classList.toggle('modo-noturno');
+        }
+    </script>
+</body>
+</html>

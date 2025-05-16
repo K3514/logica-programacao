@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+    <script>
+        <h2>
+            Exercicio de css!
+        </h2>
+
+        <form onsubmit="return validarFormulario()">
+            <label for="nome">Nome:</label>
+            <input id="caixaDoNome" type="text" placeholder="Digite seu nome aqui">
+            <button type="submit">Enviar</button>
+        </form>
+
+        <script>
+            function validarFormulario(){
+                let campo = document.getElementById('caixaDoNome')
+
+                if(campo.value.trim() ===""){
+                    campo.style.border = "2px solid red";
+                    return false
+                }else{
+                    campo.style.border = "2px solid green"
+                }
+            }
+        </script>
+    </section>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio evento 1</title>
+</head>
+<body>
+    <input type="text" id="campoTexto">
+    <button id="botao"> clique aqui</button>
+    <p id="mensagem"></p>
+
+    <script>
+        let textoTempoReal = document.getElementById('campoTexto');
+        let mensagemTempoReal = document.getElementById('mensagem');
+        let botao = document.getElementById('botao');
+        
+        botao.addEventListener('click', function(){
+            mensagemTempoReal.textContent = 'Clique realizado';
+        });
+
+        botao.addEventListener('dblclick', function(){
+            mensagemTempoReal.textContent = 'Duplo clique realizado';
+        });
+    </script>
+</body>
+</html>

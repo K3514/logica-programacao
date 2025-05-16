@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicio css</title>
+    <style>
+        #caixa{
+            height: 200px;
+            width: 200px;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="caixa"></div>
+    <button onclick="mudarCor()"> Mudar cor</button>
+
+    <script>
+        function mudarCor(){
+            let tempoRealDoQuadrado = document.getElementById("caixa")
+            tempoRealDoQuadrado.style.backgroundColor="black"
+        }
+    </script>
+
+
+    
+</body>
+</html>

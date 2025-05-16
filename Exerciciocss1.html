@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #p{
+            color: brown;
+        }
+    </style>
+</head>
+<body>
+    <p id="letra">Uma banda de maça e outra de?</p>
+    <button onclick="aumentarTamanho()"> + </button>
+    <button onclick="diminuirTamanho()"> - </button>
+
+    <script>
+        let tamanhoAtual = 16
+        let letra = document.getElementById("letra")
+
+        function aumentarTamanho(){
+           
+            letra.style.fontSize = (tamanhoAtual++) + "px"
+        }
+
+        function diminuirTamanho(){
+            letra.style.fontSize = (tamanhoAtual--) + "px"
+        }
+    </script>
+</body>
+</html>

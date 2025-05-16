@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exemplo css</title>
+
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 30px;
+        }
+        section{
+            margin-bottom: 40px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        hr{
+            margin-top: 0;
+        }
+        input{
+            padding: 5px;
+            margin-right: 10px;
+        }
+        button{
+            padding: 6px 12px;
+            cursor: pointer;
+        }
+        .destaque{
+            background-color: yellow;
+            font-weight: bold;
+        }
+
+    </style>
+
+</head>
+<body>
+  <h1 id="meuTexto" class="destaque">Sabado é o melhor dia!</h1>
+  <button onclick="destacarTexto()"> DESTACAR</button>
+  <script>
+    function destacarTexto(){
+        let text = document.getElementById('meuTexto');
+        text.classList.toggle("destaque")
+    }
+  </script>
+</body>
+</html>
