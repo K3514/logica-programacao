@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 3 - DOM </title>
+</head>
+<body>
+    <h1> Digite seu nome</h1>
+        <input type="text" id="nome" placeholder="digite seu nome">
+        <button onclick="exibirMensagem()">Enviar</button>
+        <p id="mensagemBoasVindas"></p>
+    
+    <script>
+        function exibirMensagem(){
+            let nome = document.getElementById("nome").value;
+            let mensagem = "olá "  + nome + ", seja bem-vindo!";
+            document.getElementById("mensagemBoasVindas").textContent = mensagem;
+
+        }
+       
+
+    </script>
+</body>
+</html>

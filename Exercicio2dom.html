@@ -6,14 +6,25 @@
     <title>DOM - Exercicio 2</title>
 </head>
 <body>
+    <p> como alterar titulo clicando en um botão</p>
     <h1 id="titulo"> Como fazer bolo</h1>
        <button onclick="alterarTitulo()">Alterar Título</button>
        
 
     <script>
+
+        let tituloOriginal = "Como fazer bolo";
+        let tituloAlterado = "Bolo pronto"
+    
         function alterarTitulo(){
             let titulo = document.getElementById("titulo");
-            titulo.textContent = "Bolo pronto";
+          
+
+            if(titulo.textContent == tituloOriginal){
+                titulo.textContent = tituloAlterado;
+            }else {
+                titulo.textContent = tituloOriginal;
+            }
         }
     </script>
 </body>
