@@ -1,0 +1,33 @@
+<!DOCTYPE html> 
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda</title>
+</head>
+<body>
+    <h1>Agenda</h1>
+    <button id="botao">Conferir compromisso</button>
+    <p id="mensagem"></p>
+    <p>Contador: <span id="contador">5</span></p>
+
+    <script>
+        document.getElementById('botao').addEventListener('click', function () {
+            let contador = 5;
+            document.getElementById('contador').textContent = contador;
+
+            let intervalo = setInterval(() => {
+                contador--;
+                document.getElementById('contador').textContent = contador;
+                if (contador < 0) {
+                    clearInterval(intervalo);
+                }
+            }, 1000);
+
+            setTimeout(() => {
+                document.getElementById('mensagem').textContent = "Não se esqueça da sua reunião";
+            }, 5000);
+        });
+    </script>
+</body>
+</html>

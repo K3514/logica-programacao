@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio evento 2 - mudar cor da tela</title>
+</head>
+<body id="corpo">
+    <button id="botao">Clique ou dê duplo clique</button>
+
+    <script>
+        let botao = document.getElementById('botao');
+        let corpo = document.getElementById('corpo')
+        
+        botao.addEventListener('click', function(){
+         corpo.style.backgroundColor ='green'
+        });
+
+    </script>
+</body>
+</html>

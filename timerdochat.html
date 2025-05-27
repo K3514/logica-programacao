@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer de Cozinha</title>
+</head>
+<body>
+    <h1>Timer de Cozinha</h1>
+    <input type="text" id="tempo" placeholder="Digite os segundos">
+    <button id="botao">Iniciar timer</button>
+    <h2>Tempo Restante: <span id="contador">0</span></h2>
+    <p id="mensagem"></p>
+
+    <script>
+        let intervalo;
+        let botao = document.getElementById('botao');
+        let tempoInput = document.getElementById('tempo');
+        let contadorSpan = document.getElementById('contador');
+        let mensagem = document.getElementById('mensagem');
+
+        botao.addEventListener('click', function () {
+            clearInterval(intervalo); // para evitar múltiplos intervalos
+
+            let tempo = parseInt(tempoInput.value);
+
+            if (isNaN(tempo) || tempo < 0) {
+                mensagem.textContent = 'Por favor, digite um número válido de segundos.';
+                return;
+            }
+
+            mensagem.textContent = 'Contagem iniciada!';
+            contadorSpan.textContent = tempo;
+
+            intervalo = setInterval(() => {
+                tempo--;
+                contadorSpan.textContent = tempo;
+
+                if (tempo <= 0) {
+                    clearInterval(intervalo);
+                    mensagem.textContent = 'Tempo esgotado!';
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

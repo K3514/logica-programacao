@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aparecer texto clicando no botão</title>
+</head>
+<body>
+    <h1>Aperte para exibir o conteúdo</h1>
+    <button id="botao">click aqui!</button>
+    <p id="mensagem"></p>
+
+    <script>
+        document.getElementById('botao').addEventListener('click', () => {
+            setTimeout(() =>{
+                document.getElementById('mensagem').textContent = "conteúdo"
+            },100)
+        })
+       
+    </script>
+    
+</body>
+</html>

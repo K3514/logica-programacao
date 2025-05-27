@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>semáforo</title>
+    <style>
+        .semaforo{
+            width: 80px;
+            height: 180px;
+            background-color: rgb(41, 35, 35);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+        .luz{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgb(185, 182, 182);
+            margin: 10px auto;
+        }
+        .vermelha{
+            background-color: red;
+
+        }
+        .amarela{
+            background-color: yellow;
+        }
+        .verde{
+            background-color: green;
+        }
+        button{
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="semaforo">
+        <div id="vermelha" class="luz"></div>
+        <div id="amarela" class="luz"></div>
+        <div id="verde" class="luz"></div>
+    </div>
+    <button id="botao">Iniciar</button>
+
+    <script>
+        const luzVermelha = document.getElementById('vermelha')
+        const luzAmarela = document.getElementById('amarela')
+        const luzVerde = document.getElementById('verde')
+
+        function apagarTodas(){
+            luzVermelha.className = 'luz'
+            luzAmarela.className = 'luz'
+            luzVerde.className = 'luz'
+        }
+        document.getElementById('botao').addEventListener('click', () =>{
+            apagarTodas();
+            luzVerde.classList.add('verde')
+
+            setTimeout(() =>{
+                apagarTodas();
+                luzAmarela.classList.add('amarela')
+            },2000)
+            
+            setTimeout(() =>{
+                apagarTodas()
+                luzVermelha.classList.add('vermelha')
+            },3000)
+        })
+    </script>
+</body>
+</html>

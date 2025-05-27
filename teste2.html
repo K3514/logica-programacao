@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste Imagem em Movimento</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .img {
+            position: absolute; /* necessário para mover com 'left' */
+            width: 100px;
+            height: 100px;
+            top: 100px; /* posicionamento vertical opcional */
+            left: 0px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="img">
+        <img src="img-Photoroom.png" alt="Imagem em movimento" width="100" height="100">
+    </div>
+
+    <script>
+        let posicao = 0;
+        let imagem = document.getElementsByClassName('img')[0]; // pegar o primeiro (único)
+
+        let intervaloMovimento = setInterval(function () {
+            posicao += 10;
+            imagem.style.left = posicao + 'px';
+
+            if (posicao >= 1300) {
+                clearInterval(intervaloMovimento);
+            }
+        }, 100);
+
+        // Alterna a cor de fundo
+        let trocas = 0;
+        let intervaloCores = setInterval(() => {
+            if (document.body.style.backgroundColor === 'red') {
+                document.body.style.backgroundColor = 'black';
+            } else {
+                document.body.style.backgroundColor = 'red';
+            }
+
+            trocas++;
+            if (trocas >= 1000) {
+                clearInterval(intervaloCores);
+            }
+        }, 100);
+    </script>
+</body>
+</html>
