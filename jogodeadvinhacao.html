@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivinhe o número</title>
+    
+    <style>
+        body{
+            font-family: 'Times New Roman', Times, serif;
+            background-color: rgb(185, 247, 228);
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            margin: 0
+        }
+        .game-container{
+            background-color: rgb(167, 167, 255);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px black;
+            text-align: center;
+            width: 320px;
+            margin: 20px;
+        }
+        input[type="number"]{
+            padding: 10px;
+            font-size: 18px;
+            width: 100%;
+            margin-top: 10px;
+        }
+        button{
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: rgb(185, 247, 228);
+            color: black;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="game-container">
+          <h1>Advinhe o número</h1>
+          <p>Escolha um número entre 1 a 100</p>
+          <input type="number" min="1" max="100">
+
+          <button>Arriscar!</button>
+    </div>
+
+    <script>
+        let numeroSecreto
+        
+        function iniciarJogo(){
+            numeroSecreto = Math.floor(Math.random) * 100
+        }
+    </script>
+</body>
+</html>

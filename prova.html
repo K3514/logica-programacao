@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Prova - Finalização com JavaScript</title>
+<style>
+    button {
+        padding: 10px 20px;
+        font-size: 18px;
+        background-color: rgb(185, 247, 228);
+        color: black;
+        border: none;
+        cursor: pointer;
+        margin-top: 10px;
+        margin-right: 10px;
+    }
+    .input-area {
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+</style>
+</head>
+<body>
+<h1>Prova - Finalização com JavaScript</h1>
+
+<div class="exercicio">
+    <button id="tabuada">Tabuada</button>
+    <div id="input-tabuada" class="input-area"></div>
+
+    <button id="contador">Contador</button>
+    <div id="input-contador" class="input-area"></div>
+
+    <button id="idade">Classificar idade</button>
+    <div id="input-idade" class="input-area"></div>
+</div>
+
+<script>
+function criarInputTabuada() {
+    const area = document.getElementById('input-tabuada');
+    if (area.querySelector('input')) return; // já tem input, não cria outro
+
+    const input = document.createElement('input');
+    input.type = 'number';
+    input.placeholder = 'Digite um número';
+
+    const btn = document.createElement('button');
+    btn.textContent = 'Calcular Tabuada';
+
+    btn.addEventListener('click', () => {
+        const num = Number(input.value);
+        if (isNaN(num)) {
+            alert('Digite um número válido!');
+            return;
+        }
+        let resultado = '';
+        for (let i = 1; i <= 10; i++) {
+            resultado += `${num} x ${i} = ${num * i}\n`;
+        }
+        alert(resultado);
+    });
+
+    area.appendChild(input);
+    area.appendChild(btn);
+}
+
+function criarInputContador() {
+    const area = document.getElementById('input-contador');
+    if (area.querySelector('input')) return;
+
+    const input = document.createElement('input');
+    input.type = 'number';
+    input.placeholder = 'Digite um número inicial (ex: 10)';
+
+    const btn = document.createElement('button');
+    btn.textContent = 'Iniciar Contador';
+
+    btn.addEventListener('click', () => {
+        let contador = Number(input.value);
+        if (isNaN(contador) || contador < 0) {
+            alert('Digite um número válido e maior ou igual a zero!');
+            return;
+        }
+        btn.disabled = true;
+        input.disabled = true;
+
+        const intervalo = setInterval(() => {
+            btn.textContent = contador;
+            contador--;
+            if (contador < 0) {
+                clearInterval(intervalo);
+                btn.textContent = 'Iniciar Contador';
+                btn.disabled = false;
+                input.disabled = false;
+            }
+        }, 1000);
+    });
+
+    area.appendChild(input);
+    area.appendChild(btn);
+}
+
+function criarInputIdade() {
+    const area = document.getElementById('input-idade');
+    if (area.querySelector('input')) return;
+
+    const input = document.createElement('input');
+    input.type = 'number';
+    input.placeholder = 'Digite sua idade';
+
+    const btn = document.createElement('button');
+    btn.textContent = 'Classificar';
+
+    btn.addEventListener('click', () => {
+        const idade = Number(input.value);
+        if (isNaN(idade) || idade < 0) {
+            alert('Digite uma idade válida!');
+            return;
+        }
+
+        let classificacao = '';
+        if (idade < 12) {
+            classificacao = 'Criança';
+        } else if (idade < 18) {
+            classificacao = 'Adolescente';
+        } else if (idade < 24) {
+            classificacao = 'Jovem';
+        } else {
+            classificacao = 'Adulto';
+        }
+        alert(`Classificação: ${classificacao}`);
+    });
+
+    area.appendChild(input);
+    area.appendChild(btn);
+}
+
+document.getElementById('tabuada').addEventListener('click', criarInputTabuada);
+document.getElementById('contador').addEventListener('click', criarInputContador);
+document.getElementById('idade').addEventListener('click', criarInputIdade);
+</script>
+
+</body>
+</html>
